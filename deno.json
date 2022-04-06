@@ -1,0 +1,9 @@
+{
+  "compilerOptions": {
+    "lib": ["deno.window", "deno.ns", "deno.unstable"]
+  },
+  "tasks": {
+    "compile": "deno compile --unstable mod.ts",
+    "test": "deno test --unstable"
+  }
+}
