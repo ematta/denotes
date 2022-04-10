@@ -1,0 +1,25 @@
+name: Deno Release
+
+on:
+  workflow_dispatch:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Setup repo
+        uses: actions/checkout@v3
+
+      - name: Setup Deno
+        uses: denoland/setup-deno@004814556e37c54a2f6e31384c9e18e983317366
+        with:
+          deno-version: v1.20.4
+
+      - name: Run Compiler
+        run: deno task compile
+
+      - name: Release
+        uses: softprops/action-gh-release@v1
+        with:
+          files: denotes
