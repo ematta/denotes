@@ -6,8 +6,25 @@
       "deno.unstable"
     ]
   },
+  "fmt": {
+    "files": {
+      "include": [
+        "src/",
+        "tests/"
+      ]
+    },
+    "options": {
+      "useTabs": false,
+      "lineWidth": 120,
+      "indentWidth": 2,
+      "singleQuote": true,
+      "proseWrap": "preserve"
+    }
+  },
   "tasks": {
     "compile": "deno compile --allow-write --allow-read --allow-env --unstable mod.ts",
-    "test": "deno test --unstable"
+    "test": "deno test --allow-write --allow-read --allow-env --unstable",
+    "dev": "deno run --allow-write --allow-read --allow-env --unstable mod.ts",
+    "debug": "deno run --allow-write --allow-read --allow-env --unstable --inspect-brk mod.ts"
   }
 }
