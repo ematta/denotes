@@ -1,9 +1,13 @@
 {
   "compilerOptions": {
-    "lib": ["deno.window", "deno.ns", "deno.unstable"]
+    "lib": [
+      "deno.window",
+      "deno.ns",
+      "deno.unstable"
+    ]
   },
   "tasks": {
-    "compile": "deno compile --unstable mod.ts",
+    "compile": "deno compile --allow-write --allow-read --allow-env --unstable mod.ts",
     "test": "deno test --unstable"
   }
 }
