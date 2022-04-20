@@ -23,7 +23,7 @@
   },
   "tasks": {
     "compile": "deno compile --allow-write --allow-read --allow-env --unstable mod.ts",
-    "test": "deno test --allow-write --allow-read --allow-env --unstable",
+    "test": "deno test --allow-write --allow-read --allow-env --unstable tests",
     "dev": "deno run --allow-write --allow-read --allow-env --unstable mod.ts",
     "debug": "deno run --allow-write --allow-read --allow-env --unstable --inspect-brk mod.ts"
   }
