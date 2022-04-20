@@ -1,15 +1,31 @@
 /** @jsx h */
-import { serve } from "https://deno.land/std@0.114.0/http/server.ts";
-import { h } from "https://esm.sh/preact@10.5.15";
-import { renderToString } from "https://esm.sh/preact-render-to-string@5.1.19?deps=preact@10.5.15";
+/// <reference no-default-lib="true"/>
+/// <reference lib="dom" />
+/// <reference lib="dom.asynciterable" />
+/// <reference lib="deno.ns" />
 
-function handler(_req: Request): Response {
-  const page = (
-    <div><h1>Current time</h1><p> { new Date().toLocaleString() } </p></div>
+import { serve } from "https://deno.land/std@0.114.0/http/server.ts";
+import { h, renderSSR } from "https://deno.land/x/nano_jsx@v0.0.20/mod.ts";
+
+function App() {
+  return (
+    <html>
+      <head>
+        <title>Hello from JSX</title>
+      </head>
+      <body>
+        <h1>Hello world</h1>
+      </body>
+    </html>
   );
-  const html = renderToString(page);
+}
+
+function handler() {
+  const html = renderSSR(<App />);
   return new Response(html, {
-    headers: { "content-type": "text/html; charset=utf-8" },
+    headers: {
+      "content-type": "text/html",
+    },
   });
 }
 
