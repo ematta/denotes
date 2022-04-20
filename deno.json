@@ -1,7 +1,6 @@
 {
   "compilerOptions": {
-    "jsx": "preserve",
-    "jsxImportSource": "https://esm.sh/preact",
+    "jsx": "react",
     "lib": [
       "deno.window",
       "deno.ns",
@@ -24,9 +23,8 @@
     }
   },
   "tasks": {
-    "compile": "deno compile --allow-write --allow-read --allow-env --unstable mod.ts",
-    "test": "deno test --allow-write --allow-read --allow-env --unstable tests",
-    "dev": "deno run --allow-write --allow-read --allow-env --unstable mod.ts",
-    "debug": "deno run --allow-write --allow-read --allow-env --unstable --inspect-brk mod.ts"
+    "test": "deno test --allow-net --allow-env --unstable tests",
+    "dev": "deno run --allow-net --allow-env --unstable main.tsx",
+    "debug": "deno run --allow-net --allow-env --unstable --inspect-brk main.tsx"
   }
 }
