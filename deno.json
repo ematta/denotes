@@ -1,5 +1,7 @@
 {
   "compilerOptions": {
+    "jsx": "preserve",
+    "jsxImportSource": "https://esm.sh/preact",
     "lib": [
       "deno.window",
       "deno.ns",
