@@ -5,10 +5,7 @@ import { renderToString } from "https://esm.sh/preact-render-to-string@5.1.19?de
 
 function handler(_req: Request): Response {
   const page = (
-    <div>
-    <h1>Current time</h1>
-      < p > { new Date().toLocaleString() } < /p>
-      < /div>
+    <div><h1>Current time</h1><p> { new Date().toLocaleString() } </p></div>
   );
   const html = renderToString(page);
   return new Response(html, {
